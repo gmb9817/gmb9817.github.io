@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>자리 랜덤 뽑기</title>
+    <meta charset="UTF-8"/>
+  </head>
+  <body>
+    <div id="seat">
+      
+    </div>
+    <input type="button" value="자리 섞기" onclick="seat()">
+    <script>
+      function shuffle(array) {
+        array.sort(() => Math.random() - 0.5);
+      }
+      function seat(){
+        shuffle(arr);
+        let doc=document.getElementById("seat");
+        let str="";
+        for(let i=1; i<=35; i++){
+          str+=i.toString()+' ';
+          if(i%6==0){
+            str+='\n';
+          }
+        }
+        doc.innerText=str;
+      }
+      let arr=Array.from({length:35}, (v,i)=>i+1));
+    </script>
+  </body>
+</html>
